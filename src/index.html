@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>NgElements</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <ngcmp-input>
+    <label slot="title">Your name: </label>
+  </ngcmp-input>
+  <ngcmp-button button-label="Click Me!"></ngcmp-button>
+
+  <script>
+    const btnComponent = document.querySelector('ngcmp-button');
+    const inptComponent = document.querySelector('ngcmp-input');
+    btnComponent.addEventListener('customEvent', (event) => {
+      const message = event.detail;
+      const name = inptComponent['input']?.value;
+      alert(`${message} ${name}`);
+      console.log()
+    })
+  </script>
+</body>
+</html>
